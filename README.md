@@ -25,7 +25,7 @@ The two models split the work: Qwen is the witness that turns pixels into words 
 ## Scope
 
 
-<p align="center"><img src="misc/demo_openvigi.gif" alt="OpenVigi web page" width="50%"></p>
+<p align="center"><img src="misc/demo_openvigi.gif" alt="OpenVigi web page" width="70%"></p>
 
 | Part | What it does |
 |---|---|
