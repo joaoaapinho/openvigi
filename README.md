@@ -49,7 +49,9 @@ The two models split the work: Qwen is the witness that turns pixels into words 
 
 A frame is checked every $\Delta = 3$ s. For a live camera, the next check starts at
 
-$$t_{i+1} = \max\left(t_i + \Delta,\; t_i + \text{check time}_i\right)$$
+```math
+t_{i+1} = \max\left(t_i + \Delta,\; t_i + \text{check time}_i\right)
+```
 
 so a slow check doesn't push every following one back. Video streams keep sending frames whether you read them or not, and reading one every few seconds leaves you judging footage that gets older with every check. `StreamSource` avoids this by draining the stream on a background thread and decoding a frame only when a check asks for one. For video files, frames are sampled every $\Delta$ seconds of footage.
 
@@ -61,15 +63,21 @@ Qwen answers a short form about the frame (`prompts/qwen_prompt.txt`): how many 
 
 The description $d_t$ goes to Jev with two questions (`prompts/jev_questions.json`):
 
-$$p_t = P(\text{someone is or could soon be in danger} \mid d_t)$$
+```math
+p_t = P(\text{someone is or could soon be in danger} \mid d_t)
+```
 
-$$s_t \in \{\text{armed\_threat},\ \text{violence},\ \text{ransacked},\ \text{person\_down},\ \text{strange\_behaviour},\ \text{normal}\}$$
+```math
+s_t \in \{\text{armed\_threat},\ \text{violence},\ \text{ransacked},\ \text{person\_down},\ \text{strange\_behaviour},\ \text{normal}\}
+```
 
 A frame counts as a threat when $p_t \geq \tau$, with $\tau = 0.7$. Theft without violence, and covered faces on their own, are deliberately not threats.
 
 ### 4. Alert rule
 
-$$\text{streak}_t = \begin{cases} \text{streak}_{t-1} + 1 & \text{if } p_t \geq \tau \\\\ 0 & \text{otherwise} \end{cases}$$
+```math
+\text{streak}_t = \begin{cases} \text{streak}_{t-1} + 1 & \text{if } p_t \geq \tau \\ 0 & \text{otherwise} \end{cases}
+```
 
 An alert fires when $\text{streak}_t = k$, with $k = 3$. This adds at least $(k-1)\Delta = 6$ s of delay in exchange for fewer false alarms.
 
@@ -77,7 +85,9 @@ An alert fires when $\text{streak}_t = k$, with $k = 3$. This adds at least $(k-
 
 Detection rates use the Wilson interval, which stays sensible near 0% and 100%:
 
-$$\frac{\hat{p} + \frac{z^2}{2n} \pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}}, \qquad z = 1.96$$
+```math
+\frac{\hat{p} + \frac{z^2}{2n} \pm z\sqrt{\frac{\hat{p}(1-\hat{p})}{n} + \frac{z^2}{4n^2}}}{1 + \frac{z^2}{n}}, \qquad z = 1.96
+```
 
 False alarms are counted per 100 hours of footage with people in it (an empty shop at night is easy and would flatter the rate). Alerts within 60 s of each other count once. The upper bound uses the exact Poisson interval: $\lambda_{\text{up}}$ such that $P(X \leq k \mid \lambda_{\text{up}}) = 0.05$.
 
@@ -171,7 +181,6 @@ openvigi ui [--port 8080] [--no-browser]   the web page
 openvigi snapshot SOURCE [-o file.jpg]     save one frame, to test a camera URL (no GPU or API needed)
 openvigi check IMAGE                       describe and judge one image, with full details
 openvigi telegram                          set up Telegram and send a test photo
-openvigi watch SOURCE [--interval 3] [--needed 3] [--alerts-dir alerts] [--telegram]
 ```
 
 | Var | Default | |
