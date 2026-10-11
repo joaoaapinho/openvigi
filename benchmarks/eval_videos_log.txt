@@ -1,0 +1,22 @@
+10 videos
+done vtest_01_t: 74 new frames in 322s (4.4s per frame)
+done vtest_02_t: 11 new frames in 39s (3.6s per frame)
+done vtest_03_t: 45 new frames in 140s (3.1s per frame)
+done vtest_04_t: 29 new frames in 90s (3.1s per frame)
+done vtest_05_t: 35 new frames in 102s (2.9s per frame)
+done vtest_01_s: 7 new frames in 23s (3.3s per frame)
+done vtest_02_s: 25 new frames in 88s (3.5s per frame)
+done vtest_03_s: 40 new frames in 123s (3.1s per frame)
+done vtest_04_s: 31 new frames in 94s (3.0s per frame)
+done vtest_05_s: 11 new frames in 36s (3.3s per frame)
+
+5 robbery videos, 5 normal videos
+normal footage: 0.1 h (0.1 h with people in frame), 308 frames checked, 0 API errors
+Jev cost: $0.01 total, 819 tokens/frame
+
+system                            robberies caught  median delay  false alarms    per 100 occupied h (95% max)
+single frame                   4/5 = 80% [38%-96%]           20s             2              2105.26 (<6627.15)
+2 in a row                     4/5 = 80% [38%-96%]           22s             1              1052.63 (<4993.54)
+3 in a row                     4/5 = 80% [38%-96%]           26s             1              1052.63 (<4993.54)
+
+[brackets] = 95% confidence interval. Per-video details saved to benchmarks/video_results.csv

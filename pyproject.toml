@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openvigi"
+version = "0.1.0"
+description = "Plug an existing CCTV camera into a local vision model and the Jev API to spot robberies and violence."
+readme = "README.md"
+license = "Apache-2.0"
+authors = [{ name = "Joao Andre Pinho" }]
+requires-python = ">=3.10"
+dependencies = [
+    "requests",
+    "opencv-python-headless",
+]
+
+[project.urls]
+Repository = "https://github.com/joaoaapinho/openvigi"
+
+[project.scripts]
+openvigi = "openvigi.__main__:main"
+
+[tool.setuptools]
+packages = ["openvigi"]
+
+[tool.setuptools.package-data]
+openvigi = ["prompts/*", "ui.html", "logo.png"]

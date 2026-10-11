@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenVigi</title>
+<link rel="icon" href="/logo.png">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0a1711; --panel: #10241a; --header: #0d1f16; --text: #e2f0e7; --muted: #8db39d; --border: #1f3f2d;
+    --field: #0c1c14; --accent: #3fae73; --accent-text: #04120a; --ok: #6fdba3; --ok-bg: #143322;
+    --bad: #ff6b6b; --bad-bg: #3a1a1a; --code-bg: #0c1c14;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display: flex; align-items: center; gap: 12px; padding: 14px max(20px, calc((100% - 1400px) / 2 + 20px)); border-bottom: 1px solid var(--border); background: var(--header); }
+  header h1 { font-size: 20px; margin: 0; letter-spacing: .2px; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .brand img { height: 32px; width: auto; aspect-ratio: 1376 / 768; border-radius: 6px; border: 1px solid var(--border); }
+  main { display: grid; grid-template-columns: 360px 1fr; gap: 16px; padding: 16px 20px; max-width: 1400px; margin: 0 auto; align-items: stretch; }
+  .column { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+  .column > .grow { flex: 1; }
+  .wide { grid-column: 1 / -1; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; padding: 16px; } }
+  section { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  h2 { font-size: 15px; margin: 0 0 12px; }
+  label { display: block; font-size: 13px; color: var(--muted); margin: 10px 0 4px; }
+  input[type=text], input[type=password], select { width: 100%; padding: 8px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--field); color: var(--text); font: inherit; }
+  input:focus, select:focus, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+  button { padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; background: var(--panel); color: var(--text); font: inherit; cursor: pointer; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-text); font-weight: 600; }
+  button.danger { background: var(--bad); border-color: var(--bad); color: #fff; font-weight: 600; }
+  button:disabled { opacity: .5; cursor: default; }
+  .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 12px; }
+  .row > input, .row > select { flex: 1; min-width: 0; }
+  .tabs { display: flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .tabs button { flex: 1; border: 0; border-radius: 0; white-space: nowrap; padding: 8px 6px; }
+  .tabs button.on { background: var(--accent); color: var(--accent-text); }
+  .hint { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .pill { font-size: 12px; padding: 3px 10px; border-radius: 99px; background: var(--code-bg); color: var(--muted); }
+  .pill.on { background: var(--ok-bg); color: var(--ok); }
+  .msg { font-size: 13px; margin-top: 10px; min-height: 1em; }
+  .msg.err { color: var(--bad); }
+  .msg.good { color: var(--ok); }
+  .check { display: flex; gap: 8px; align-items: center; margin-top: 12px; font-size: 14px; }
+  .view { position: relative; background: #050d09; border-radius: 8px; aspect-ratio: 16/9; max-height: 420px; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .view img { width: 100%; height: 100%; object-fit: contain; }
+  .view img:not([src]) { display: none; }
+  .view .empty { color: var(--muted); font-size: 14px; position: absolute; text-align: center; padding: 16px; }
+  .verdict { position: absolute; top: 10px; left: 10px; padding: 6px 12px; border-radius: 6px; font-weight: 700; font-size: 14px; }
+  .verdict.ok { background: var(--ok-bg); color: var(--ok); }
+  .verdict.threat { background: var(--bad); color: #fff; }
+  pre { white-space: pre-wrap; background: var(--code-bg); border-radius: 6px; padding: 10px; font-size: 13px; margin: 12px 0 0; height: 110px; overflow: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  td, th { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; }
+  td.threat { color: var(--bad); font-weight: 700; }
+  td.ok { color: var(--ok); }
+  .grid2 > section { display: flex; flex-direction: column; }
+  .scroll, .log { flex: 1; height: 0; min-height: 140px; overflow: auto; }
+  .log { font: 12px/1.6 ui-monospace, monospace; color: var(--muted); }
+  .alerts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .alerts a { color: inherit; text-decoration: none; font-size: 12px; }
+  .alerts img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border-radius: 6px; display: block; margin-bottom: 4px; }
+  .chats button { margin: 6px 6px 0 0; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 1100px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="brand"><img src="/logo.png" alt=""><h1>OpenVigi</h1></div>
+  <span id="status" class="pill">Stopped</span>
+</header>
+
+<main>
+  <div class="column">
+    <section>
+      <h2>1. Camera</h2>
+      <div class="tabs" id="tabs">
+        <button data-tab="webcam" class="on">Webcam</button>
+        <button data-tab="url">Camera URL</button>
+        <button data-tab="file">Video file</button>
+      </div>
+
+      <div data-panel="webcam">
+        <label for="webcam">Webcam</label>
+        <div class="row" style="margin-top:0">
+          <select id="webcam"><option>Looking for webcams…</option></select>
+          <button id="refresh" title="Look for webcams again">Refresh</button>
+        </div>
+      </div>
+      <div data-panel="url" hidden>
+        <label for="url">RTSP or snapshot URL</label>
+        <input id="url" type="text" placeholder="rtsp://user:password@192.168.1.20:554/stream1" autocomplete="off">
+        <div class="hint">Find the URL for your camera in the <a href="https://www.ispyconnect.com/cameras" target="_blank" rel="noopener" style="color: var(--accent)">iSpy camera database</a>.</div>
+      </div>
+      <div data-panel="file" hidden>
+        <label for="file">Recorded video</label>
+        <input id="file" type="file" accept="video/*">
+        <div class="hint">Checked every 3 s of footage. A good way to try OpenVigi first.</div>
+      </div>
+
+      <label class="check"><input type="checkbox" id="telegram"> Send alerts to Telegram</label>
+      <div class="hint" id="telegram-hint"></div>
+
+      <div class="row">
+        <button id="test">Test camera</button>
+        <button id="start" class="primary">Start watching</button>
+        <button id="stop" class="danger" hidden>Stop</button>
+      </div>
+      <div class="msg" id="camera-msg"></div>
+    </section>
+
+    <section class="grow">
+      <h2>2. Settings</h2>
+      <label for="JEV_API_KEY">Jev API key <span id="JEV_API_KEY-state"></span></label>
+      <input id="JEV_API_KEY" type="password" autocomplete="off">
+
+      <label for="TELEGRAM_BOT_TOKEN">Telegram bot token <span id="TELEGRAM_BOT_TOKEN-state"></span></label>
+      <input id="TELEGRAM_BOT_TOKEN" type="password" autocomplete="off" placeholder="from @BotFather">
+
+      <label for="TELEGRAM_CHAT_ID">Telegram chat ID <span id="TELEGRAM_CHAT_ID-state"></span></label>
+      <div class="row" style="margin-top:0">
+        <input id="TELEGRAM_CHAT_ID" type="password" autocomplete="off">
+        <button id="find-chat" title="Send your bot a message in Telegram first">Find it</button>
+      </div>
+      <div class="chats" id="chats"></div>
+
+      <div class="row">
+        <button id="save" class="primary">Save</button>
+        <button id="telegram-test">Send test photo</button>
+      </div>
+      <div class="msg" id="settings-msg"></div>
+      <div class="hint">Saved on this computer only, in ~/.config/openvigi/config.json.</div>
+    </section>
+  </div>
+
+  <div class="column">
+    <section>
+      <div class="view">
+        <img id="live" alt="">
+        <div class="empty" id="empty">Pick a camera and press <b>Test camera</b> or <b>Start watching</b>.</div>
+        <div class="verdict" id="verdict" hidden></div>
+      </div>
+      <pre id="description" hidden></pre>
+    </section>
+
+    <div class="grid2 grow">
+      <section>
+        <h2>Checks</h2>
+        <div class="scroll">
+          <table>
+            <thead><tr><th>Time</th><th>Verdict</th><th>Threat</th><th>Situation</th></tr></thead>
+            <tbody id="checks"><tr><td colspan="4" class="hint">Nothing checked yet.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2>Messages</h2>
+        <div class="log" id="log"></div>
+      </section>
+    </div>
+
+  </div>
+
+  <section class="wide">
+    <h2>Alerts</h2>
+    <div class="alerts" id="alerts"></div>
+    <div class="hint">Every alert snapshot is saved in the alerts/ folder.</div>
+  </section>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+let tab = "webcam";
+let uploaded = { file: null, path: null };  // don't upload the same video twice
+let wasRunning = false;
+
+async function api(path, body, headers = {}) {
+  const options = body === undefined ? {} : {
+    method: "POST",
+    headers: { "X-OpenVigi": "1", "Content-Type": "application/json", ...headers },
+    body: body instanceof Blob ? body : JSON.stringify(body),
+  };
+  const r = await fetch(path, options);
+  const type = r.headers.get("Content-Type") || "";
+  const data = type.startsWith("image/") ? await r.blob() : await r.json();
+  if (!r.ok) throw new Error(data.error || r.statusText);
+  return data;
+}
+
+function say(id, text, kind = "") {
+  $(id).textContent = text;
+  $(id).className = "msg " + kind;
+}
+
+// Choosing the camera
+
+document.querySelectorAll("#tabs button").forEach(b => b.onclick = () => {
+  tab = b.dataset.tab;
+  document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b));
+  document.querySelectorAll("[data-panel]").forEach(p => p.hidden = p.dataset.panel !== tab);
+});
+
+async function loadWebcams(refresh) {
+  $("webcam").innerHTML = "<option>Looking for webcams…</option>";
+  const cams = await api("/api/webcams" + (refresh ? "?refresh=1" : ""));
+  const options = cams.map(c => Object.assign(document.createElement("option"), { value: c.index, textContent: c.label }));
+  $("webcam").replaceChildren(...(options.length ? options : [Object.assign(document.createElement("option"), { value: "", textContent: "No webcam found" })]));
+}
+$("refresh").onclick = () => loadWebcams(true);
+
+async function sourceSpec() {
+  if (tab === "webcam") {
+    if ($("webcam").value === "") throw new Error("No webcam found");
+    return $("webcam").value;
+  }
+  if (tab === "url") {
+    if (!$("url").value.trim()) throw new Error("Enter the camera URL");
+    return $("url").value.trim();
+  }
+  const file = $("file").files[0];
+  if (!file) throw new Error("Choose a video file");
+  if (uploaded.file !== file) {
+    say("camera-msg", "Uploading video…");
+    const r = await api("/api/upload", file, { "Content-Type": "application/octet-stream", "X-Filename": encodeURIComponent(file.name) });
+    uploaded = { file, path: r.path };
+  }
+  return uploaded.path;
+}
+
+$("test").onclick = async () => {
+  try {
+    const source = await sourceSpec();
+    say("camera-msg", "Connecting…");
+    const image = await api("/api/test", { source });
+    $("live").src = URL.createObjectURL(image);
+    $("empty").hidden = true;
+    say("camera-msg", "It works - this is what OpenVigi sees.", "good");
+  } catch (e) { say("camera-msg", e.message, "err"); }
+};
+
+$("start").onclick = async () => {
+  try {
+    const source = await sourceSpec();
+    say("camera-msg", "Starting… the first check takes a little longer while the model loads.");
+    await api("/api/start", { source, telegram: $("telegram").checked });
+    refresh();
+  } catch (e) { say("camera-msg", e.message, "err"); }
+};
+
+$("stop").onclick = async () => {
+  say("camera-msg", "Stopping after the current check…");
+  await api("/api/stop", {});
+  say("camera-msg", "");
+  refresh();
+};
+
+// Settings
+
+$("save").onclick = async () => {
+  const values = {};
+  for (const key of ["JEV_API_KEY", "TELEGRAM_BOT_TOKEN", "TELEGRAM_CHAT_ID"]) values[key] = $(key).value;
+  try {
+    await api("/api/settings", values);
+    $("JEV_API_KEY").value = $("TELEGRAM_BOT_TOKEN").value = $("TELEGRAM_CHAT_ID").value = "";
+    say("settings-msg", "Saved.", "good");
+    refresh();
+  } catch (e) { say("settings-msg", e.message, "err"); }
+};
+
+$("find-chat").onclick = async () => {
+  try {
+    if ($("TELEGRAM_BOT_TOKEN").value) await api("/api/settings", { TELEGRAM_BOT_TOKEN: $("TELEGRAM_BOT_TOKEN").value });
+    const chats = await api("/api/telegram/chats", {});
+    $("chats").innerHTML = "";
+    for (const chat of chats) {
+      const b = document.createElement("button");
+      b.textContent = `Use ${chat.id} (${chat.name})`;
+      b.onclick = () => { $("TELEGRAM_CHAT_ID").value = chat.id; $("chats").innerHTML = ""; say("settings-msg", "Now press Save."); };
+      $("chats").append(b);
+    }
+    say("settings-msg", "Pick your chat:");
+  } catch (e) { say("settings-msg", e.message, "err"); }
+};
+
+$("telegram-test").onclick = async () => {
+  try {
+    await api("/api/telegram/test", {});
+    say("settings-msg", "Test photo sent - check Telegram.", "good");
+  } catch (e) { say("settings-msg", e.message, "err"); }
+};
+
+// Redrawing the page from /api/state
+
+function render(s) {
+  $("status").textContent = s.running ? "Watching " + s.source : "Stopped";
+  $("status").classList.toggle("on", s.running);
+  $("start").hidden = s.running;
+  $("stop").hidden = !s.running;
+  $("test").disabled = s.running;
+
+  if (s.running && !wasRunning) {  // start the live view
+    $("live").src = "/live.mjpg?" + Date.now();
+    $("empty").hidden = true;
+  }
+  wasRunning = s.running;
+
+  const latest = s.checks[0];
+  $("verdict").hidden = !latest;
+  $("description").hidden = !latest;
+  if (latest) {
+    $("verdict").className = "verdict " + (latest.threat ? "threat" : "ok");
+    $("verdict").textContent = `${latest.threat ? "THREAT" : "OK"}  ${latest.confidence.toFixed(2)}  ${latest.situation}`;
+    $("description").textContent = latest.description + `\n\n(checked at ${latest.when}, took ${latest.latency_s}s)`;
+  }
+
+  const rows = s.checks.map(c => {
+    const tr = document.createElement("tr");
+    for (const [text, cls] of [[c.when], [c.threat ? "THREAT" : "ok", c.threat ? "threat" : "ok"], [c.confidence.toFixed(2)], [c.situation]]) {
+      const td = document.createElement("td");
+      td.textContent = text;
+      if (cls) td.className = cls;
+      tr.append(td);
+    }
+    tr.title = c.description;
+    return tr;
+  });
+  if (rows.length) $("checks").replaceChildren(...rows);
+
+  $("log").replaceChildren(...s.log.map(line => Object.assign(document.createElement("div"), { textContent: line })));
+
+  $("alerts").replaceChildren(...s.alerts.map(a => {
+    const link = Object.assign(document.createElement("a"), { href: "/alerts/" + encodeURIComponent(a.file), target: "_blank" });
+    link.append(Object.assign(document.createElement("img"), { src: "/alerts/" + encodeURIComponent(a.file), loading: "lazy", alt: "" }));
+    link.append(`${a.when} ${a.info}`);
+    return link;
+  }));
+  if (!s.alerts.length) $("alerts").textContent = "No alerts yet.";
+
+  for (const [key, info] of Object.entries(s.settings)) {
+    $(key + "-state").textContent = info.from === "env" ? "· set by environment variable" : info.set ? "· saved" : "· not set";
+    if (info.from === "env") $(key).placeholder = "(using the environment variable)";
+    else if (info.set) $(key).placeholder = "saved - type to replace";
+  }
+
+  $("telegram").disabled = !s.telegram_ready || s.running;
+  if (!s.telegram_ready) $("telegram").checked = false;
+  $("telegram-hint").textContent = s.telegram_ready ? "" : "Set up Telegram in Settings to turn this on.";
+}
+
+async function refresh() {
+  try { render(await api("/api/state")); } catch (e) { $("status").textContent = "OpenVigi isn't running"; $("status").classList.remove("on"); }
+}
+
+loadWebcams(false);
+refresh();
+setInterval(refresh, 1000);
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+system,video,label,caught,delay_s,false_alarms,alarm_times_s
+single frame,vtest_01_t,robbery,True,24.0,,24 153
+single frame,vtest_02_t,robbery,False,,,
+single frame,vtest_03_t,robbery,True,15.0,,15
+single frame,vtest_04_t,robbery,True,30.0,,30
+single frame,vtest_05_t,robbery,True,3.0,,3
+single frame,vtest_01_s,normal,,,0,
+single frame,vtest_02_s,normal,,,1,63
+single frame,vtest_03_s,normal,,,1,9
+single frame,vtest_04_s,normal,,,0,
+single frame,vtest_05_s,normal,,,0,
+2 in a row,vtest_01_t,robbery,True,27.0,,27 207
+2 in a row,vtest_02_t,robbery,False,,,
+2 in a row,vtest_03_t,robbery,True,18.0,,18
+2 in a row,vtest_04_t,robbery,True,33.0,,33
+2 in a row,vtest_05_t,robbery,True,6.0,,6
+2 in a row,vtest_01_s,normal,,,0,
+2 in a row,vtest_02_s,normal,,,1,66
+2 in a row,vtest_03_s,normal,,,0,
+2 in a row,vtest_04_s,normal,,,0,
+2 in a row,vtest_05_s,normal,,,0,
+3 in a row,vtest_01_t,robbery,True,30.0,,30 210
+3 in a row,vtest_02_t,robbery,False,,,
+3 in a row,vtest_03_t,robbery,True,21.0,,21
+3 in a row,vtest_04_t,robbery,True,66.0,,66
+3 in a row,vtest_05_t,robbery,True,9.0,,9
+3 in a row,vtest_01_s,normal,,,0,
+3 in a row,vtest_02_s,normal,,,1,69
+3 in a row,vtest_03_s,normal,,,0,
+3 in a row,vtest_04_s,normal,,,0,
+3 in a row,vtest_05_s,normal,,,0,

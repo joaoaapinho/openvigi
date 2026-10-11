@@ -1,0 +1,22 @@
+{
+  "threat": {
+    "type": "noul",
+    "instructions": "This describes one frame from a store security camera. Should staff or security be alerted because someone is, or could soon be, in danger? Theft on its own does not count.",
+    "criteria": {
+      "true": "Anyone holding or showing a weapon (gun, knife, machete, katana or sword, bat, hammer, crowbar), even if it is not pointed at anyone, including when the 'Weapon check' line says yes; anyone threatened, attacked, grabbed, choked or held down, including when the 'Threat check' line says yes; fighting, punching, kicking, pushing or wrestling; people with hands raised, cowering or backing away; someone lying on the floor, hurt or bleeding; risky behaviour such as standing or climbing on counters or jumping over them; the shop ransacked: broken glass, smashed displays, items scattered on the floor, things knocked over",
+      "false": "Ordinary shop activity with no weapon, violence or danger: customers browsing, staff serving, people talking calmly, an empty tidy shop. Shoplifting or taking goods without violence. A covered face on its own (balaclava, mask, helmet, hood, burqa, niqab or other religious veil) when no weapon is seen and nobody is violent or acting strangely"
+    }
+  },
+  "situation": {
+    "type": "choice",
+    "instructions": "Which best describes the situation in this frame?",
+    "criteria": {
+      "armed_threat": "A weapon is held, shown or pointed at someone",
+      "violence": "People fighting, grabbing, choking, hitting or holding someone down, with no weapon visible",
+      "ransacked": "The shop is wrecked: broken glass, smashed displays, items scattered or knocked over",
+      "person_down": "Someone is lying on the floor or hurt and the cause is not clear",
+      "strange_behaviour": "Odd, risky actions such as standing or climbing on counters, with no violence",
+      "normal": "Everything else, including shoplifting and people with covered faces acting normally"
+    }
+  }
+}

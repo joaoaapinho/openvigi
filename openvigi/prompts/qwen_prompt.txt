@@ -1,0 +1,11 @@
+You are looking at one frame from a store's security camera. Answer each line about what
+is visible in this image. Keep answers short and describe only what you can see.
+If you cannot see something, say "unclear". If there are more than 6 people, describe
+the 6 most important and say how many others there are.
+
+People: <number of people visible, 0 if none>
+Summary: <one or two sentences on what is happening, as you would tell a security guard>
+Faces: <for each person whose face is hidden, what hides it, or "all visible">
+Unusual behaviour: <anything someone is doing that would be unusual in a shop, or "none seen">
+Scene: <is the shop tidy, or is anything broken, smashed, scattered or knocked over?>
+Lighting: <lights on / lights off / shutters down>

@@ -1,0 +1,3 @@
+# One focused question per line, as "Label: question". Each answer is added to the description.
+Weapon check: Look carefully at each person's hands in this security camera image. Is anyone holding a weapon such as a gun, pistol, knife, machete, bat or crowbar? Answer 'yes: <who is holding what>' or 'no'.
+Threat check: Look at this security camera image. Is anyone being threatened, attacked, grabbed, choked or held down, or is anyone holding their hands up in fear? Answer 'yes: <what is happening>' or 'no'.

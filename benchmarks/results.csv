@@ -1,0 +1,795 @@
+file,actual,predicted,confidence,situation,situation_probs,latency_s,tokens,description
+threat/test_01_t.png,threat,threat,0.99,armed_threat,"{""armed_threat"": 1.0, ""violence"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 0.0}",4.29,856,"People: 2
+Summary: A man in a blue shirt and cap is pointing a gun at a pharmacist in a white coat behind a pharmacy counter. The pharmacist is raising his hands in surrender. The man is holding a black bag on the counter.
+Faces: all visible
+Unusual behaviour: man pointing gun at pharmacist
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: man in blue shirt holding gun
+Threat check: yes: A man is holding a gun and pointing it at a pharmacist who is raising his hands in fear."
+threat/test_02_t.png,threat,threat,0.99,armed_threat,"{""normal"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0}",5.83,875,"People: 3
+Summary: A person in a hoodie is holding a gun at the cashier, who is handling a blue bag. Another person stands near the refrigerators.
+Faces: Hoodie covers face; cashier's face partially visible; third person's face blurred.
+Unusual behaviour: Person with gun threatening cashier.
+Scene: Tidy, no broken or scattered items.
+Lighting: Lights on
+Weapon check: yes: the person in the blue hoodie is holding a gun
+Threat check: yes: A person in a hoodie is holding a gun and pointing it at the cashier, who is holding a blue bag and appears to be complying."
+threat/test_03_t.png,threat,threat,0.99,armed_threat,"{""ransacked"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0, ""armed_threat"": 1.0, ""person_down"": 0.0, ""normal"": 0.0}",3.78,834,"People: 2
+Summary: A man in a hoodie and sunglasses is pointing a gun at a pharmacist inside a pharmacy, demanding something. The pharmacist is holding out prescription bottles.
+Faces: all visible
+Unusual behaviour: man pointing gun at pharmacist
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the man in the hoodie is holding a gun
+Threat check: yes: A man with a gun is threatening a pharmacist."
+threat/test_04_t.png,threat,threat,0.99,armed_threat,"{""strange_behaviour"": 0.0, ""normal"": 0.0, ""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0, ""ransacked"": 0.0}",3.89,842,"People: 3
+Summary: Two men in hoodies are robbing a store, one holding a gun to the cashier while the other reaches into the cash drawer.
+Faces: all visible
+Unusual behaviour: One man is holding a gun, another is reaching into the cash drawer.
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person in the blue hoodie is holding a gun
+Threat check: yes: A person is being threatened with a gun."
+threat/test_05_t.png,threat,threat,0.95,ransacked,"{""violence"": 0.01, ""person_down"": 0.0, ""ransacked"": 0.64, ""strange_behaviour"": 0.02, ""normal"": 0.0, ""armed_threat"": 0.33}",3.57,820,"People: 1
+Summary: A person in a hoodie is breaking into the store by smashing the glass door with a hammer. Glass shards are scattered on the floor.
+Faces: hood
+Unusual behaviour: smashing door with hammer
+Scene: broken glass, door shattered
+Lighting: lights on
+Weapon check: yes: the person is holding a hammer
+Threat check: no"
+threat/test_06_t.png,threat,threat,0.78,ransacked,"{""armed_threat"": 0.0, ""ransacked"": 1.0, ""person_down"": 0.0, ""normal"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0}",3.17,801,"People: 0
+Summary: A glass door has been shattered, with glass shards scattered on the floor. Inside, a desk with a phone and shelves are visible.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: broken, smashed, scattered
+Lighting: lights on"
+threat/test_07_t.png,threat,threat,0.98,violence,"{""normal"": 0.0, ""armed_threat"": 0.0, ""violence"": 0.99, ""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.01}",5.21,907,"People: 2
+Summary: A person in black with a mask is aggressively reaching toward another person in a yellow shirt, who is raising their hands defensively. This appears to be a confrontation or assault in a store aisle.
+Faces: Person in black: mask; Person in yellow: unclear (face not visible)
+Unusual behaviour: Person in black is reaching aggressively toward the other person, which is unusual for a store setting.
+Scene: Unclear (aisle appears cluttered with shelves, but no obvious broken or scattered items visible)
+Lighting: Lights on
+Weapon check: no
+Threat check: yes: person in black is threatening or attacking the person in yellow by extending their arm and hand toward them, while the person in yellow has their hands raised in a defensive or fearful posture."
+threat/test_08_t.png,threat,threat,0.92,armed_threat,"{""strange_behaviour"": 0.34, ""normal"": 0.02, ""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.64, ""ransacked"": 0.0}",4.4,862,"People: 1
+Summary: A person in a hooded sweatshirt and gloves is standing at the checkout counter, holding a pen or stylus over the cash register. The time stamp shows 3:03 AM.
+Faces: Hood and mask
+Unusual behaviour: Person is at the register at 3 AM, possibly attempting to tamper with or operate the register without a cashier present.
+Scene: Tidy, no visible damage or scattered items.
+Lighting: Lights on
+Weapon check: yes: the person is holding a crowbar
+Threat check: no"
+threat/test_09_t.png,threat,threat,0.99,armed_threat,"{""normal"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""armed_threat"": 1.0, ""violence"": 0.0}",5.41,912,"People: 3
+Summary: A person in a black hoodie and mask is holding a silver object, possibly a weapon, pointed at another person wearing a white cap and a stethoscope. A third person in jeans is standing in the background. The person in the hoodie appears to be threatening the person in the cap.
+Faces: All hidden by hood, mask, or obscured by angle.
+Unusual behaviour: Person in hoodie is pointing a weapon-like object at another person, which is threatening and unusual in a store.
+Scene: Unclear — no visible damage or clutter, but context suggests a tense situation.
+Lighting: Lights on
+Weapon check: yes: the person in the black hoodie is holding a gun
+Threat check: yes: A person in a black hoodie is holding a gun to another person's head."
+threat/test_10_t.png,threat,threat,0.99,armed_threat,"{""violence"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 1.0, ""normal"": 0.0}",5.43,911,"People: 2
+Summary: A person with a black face covering is holding a phone or small device while facing a woman at a checkout counter; the woman has both hands raised in a defensive or surrendering gesture.
+Faces: 1 person has a black face covering; the other person's face is not visible (back of head).
+Unusual behaviour: The woman has both hands raised, which is unusual for a customer at a checkout; the man is holding a device to his ear or near his face.
+Scene: Unclear — shelves appear stocked, but the focus is on the interaction.
+Lighting: Lights on
+Weapon check: yes: the man is holding a gun
+Threat check: yes: A person is holding their hands up in fear while a masked individual appears to be threatening them with an object."
+threat/test_11_t.png,threat,threat,0.99,armed_threat,"{""ransacked"": 0.0, ""violence"": 0.0, ""normal"": 0.0, ""person_down"": 0.0, ""armed_threat"": 1.0, ""strange_behaviour"": 0.0}",5.01,894,"People: 2
+Summary: Two individuals are at the checkout counter; one is standing and appears to be handling a weapon, while the other is lying on the floor near the counter.
+Faces: Both faces are obscured by head coverings or masks.
+Unusual behaviour: One person is holding a weapon-like object and pointing it toward the other person, who is on the floor.
+Scene: The shop appears messy with items scattered on the floor, and the counter area is cluttered.
+Lighting: Lights on
+Weapon check: yes: the person standing is holding a crowbar
+Threat check: yes: person on floor appears to be held down or restrained, while other person stands over them with hand extended as if holding or threatening"
+threat/test_12_t.png,threat,threat,0.98,armed_threat,"{""strange_behaviour"": 0.0, ""person_down"": 0.0, ""normal"": 0.0, ""armed_threat"": 1.0, ""violence"": 0.0, ""ransacked"": 0.0}",4.23,852,"People: 1
+Summary: A person in a hoodie and mask is crouched near a door, holding a handgun. This appears to be a robbery or break-in.
+Faces: masked
+Unusual behaviour: person holding a gun, crouching near a door
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: the person is holding a gun
+Threat check: yes: A person is holding a gun and appears to be threatening or attacking someone, as they are crouched near a door with a weapon drawn."
+threat/test_13_t.png,threat,threat,0.98,armed_threat,"{""armed_threat"": 1.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""normal"": 0.0, ""ransacked"": 0.0}",3.74,833,"People: 1
+Summary: A person in tactical gear is holding a rifle and aiming it through a glass door. They appear to be entering or threatening a property.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: person is holding a gun
+Threat check: yes: A person is holding a rifle aimed at a glass door, suggesting an attack or threat."
+threat/test_14_t.png,threat,threat,0.99,armed_threat,"{""armed_threat"": 1.0, ""strange_behaviour"": 0.0, ""normal"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0}",4.92,875,"People: 2
+Summary: A masked person is holding a knife to a store employee behind a jewelry counter. The employee appears to be negotiating or resisting.
+Faces: masked person: black balaclava; employee: face visible
+Unusual behaviour: masked person holding knife; employee gesturing with hands
+Scene: tidy, no broken or scattered items
+Lighting: lights on
+Weapon check: yes: the person in the black balaclava is holding a knife
+Threat check: yes: The person in the black balaclava is holding a knife and pointing it at the other person, who is standing with hands out in a defensive posture."
+threat/test_15_t.png,threat,threat,0.99,armed_threat,"{""strange_behaviour"": 0.0, ""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0, ""normal"": 0.0, ""ransacked"": 0.0}",3.88,830,"People: 1
+Summary: A person in a green hooded jacket is holding a rifle and aiming it forward inside a store. 
+Faces: hood
+Unusual behaviour: person aiming rifle inside store
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person is holding a rifle
+Threat check: yes: A person is holding a rifle and aiming it, which constitutes a threat or attack."
+threat/test_16_t.png,threat,threat,0.97,armed_threat,"{""normal"": 0.02, ""ransacked"": 0.0, ""armed_threat"": 0.97, ""strange_behaviour"": 0.01, ""person_down"": 0.0, ""violence"": 0.0}",3.99,839,"People: 1
+Summary: A person wearing a black beanie and red face mask is at a checkout counter, holding an object that appears to be a firearm. They are standing near shelves with ""SPECIAL OFFERS"" signage.
+Faces: red face mask
+Unusual behaviour: person holding what appears to be a firearm at checkout
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person is holding a gun
+Threat check: no"
+threat/test_17_t.png,threat,threat,0.99,armed_threat,"{""violence"": 0.0, ""armed_threat"": 1.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""normal"": 0.0, ""strange_behaviour"": 0.0}",3.78,827,"People: 1
+Summary: A person wearing a camouflage cap and dark jacket is holding a large knife in a store aisle, appearing to threaten or rob.
+Faces: camouflage cap covering face
+Unusual behaviour: holding a large knife in a store
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: the person is holding a machete
+Threat check: yes: person holding a large knife"
+threat/test_18_t.png,threat,threat,0.97,armed_threat,"{""violence"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 0.01, ""armed_threat"": 0.99}",4.74,875,"People: 2
+Summary: Two armed individuals in white coverings are inside a store, one holding a firearm and the other holding a phone or device. They appear to be committing a robbery.
+Faces: Both faces are obscured by coverings (white cloth or hoods).
+Unusual behaviour: One person is holding a firearm, and both are wearing coverings to conceal their identities — typical of a robbery.
+Scene: Unclear — appears to be a store interior, but no visible damage or clutter.
+Lighting: Lights on
+Weapon check: yes: the person on the right is holding a gun
+Threat check: no"
+threat/test_19_t.png,threat,threat,0.99,armed_threat,"{""normal"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 1.0, ""strange_behaviour"": 0.0, ""violence"": 0.0}",4.46,858,"People: 6
+Summary: A masked person is threatening a jeweler with a knife at the counter. The jeweler is trying to reason with the intruder. People are visible outside the store.
+Faces: Mask (1), all visible (5)
+Unusual behaviour: Person holding knife to another person, threatening them.
+Scene: Tidy, no broken or scattered items.
+Lighting: Lights on
+Weapon check: yes: the person on the left is holding a knife
+Threat check: yes: A person is holding a knife to another person's face."
+threat/test_20_t.png,threat,threat,0.92,armed_threat,"{""violence"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 0.06, ""strange_behaviour"": 0.38, ""armed_threat"": 0.56}",3.63,822,"People: 1
+Summary: A person wearing a balaclava and holding a chainsaw is walking through a store aisle while carrying a plastic bag.
+Faces: balaclava
+Unusual behaviour: holding a chainsaw in a store
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person is holding a chainsaw
+Threat check: no"
+threat/test_21_t.png,threat,threat,0.89,violence,"{""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 0.02, ""armed_threat"": 0.0, ""violence"": 0.98}",4.04,836,"People: 2
+Summary: Two people are in the shop, one standing near shelves and the other leaning over a counter or display. The timestamp shows it's 21:14 on 27/11/09.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: yes: A person is being grabbed or held by another person."
+threat/test_22_t.png,threat,threat,0.99,armed_threat,"{""strange_behaviour"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 1.0, ""normal"": 0.0, ""violence"": 0.0}",3.88,834,"People: 2
+Summary: Two masked individuals are at the checkout counter, one appears to be holding a weapon while the other is interacting with the register.
+Faces: Both are obscured by helmets.
+Unusual behaviour: One person is holding a firearm and forcing interaction with the cashier.
+Scene: Unclear
+Lighting: Lights on
+Weapon check: yes: person on left is holding a gun
+Threat check: yes: being held down"
+threat/test_23_t.png,threat,threat,0.98,armed_threat,"{""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0}",4.09,834,"People: 1
+Summary: A person wearing a green beanie and dark clothing is at a counter, holding a hammer and appearing to threaten or attack someone behind the counter.
+Faces: all visible
+Unusual behaviour: person is holding a hammer and appears aggressive
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: person is holding hammer
+Threat check: yes: person holding a hammer and appears to be threatening or attacking someone"
+threat/test_24_t.png,threat,threat,0.99,armed_threat,"{""violence"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 0.0, ""armed_threat"": 1.0}",5.11,880,"People: 2
+Summary: Two armed individuals are inside the store; one is near the entrance holding a gun, the other is in the foreground also holding a gun and appears to be moving toward the back.
+Faces: Both masked
+Unusual behaviour: Both are armed and threatening; one is pointing a gun at the entrance area.
+Scene: Unclear
+Lighting: Lights on
+Weapon check: yes: person in the foreground is holding a gun, person in the background is holding a gun
+Threat check: yes: two armed individuals are present, one holding a gun and pointing it, and the other holding a gun while appearing to be in a threatening posture."
+threat/test_25_t.png,threat,threat,0.99,armed_threat,"{""armed_threat"": 1.0, ""ransacked"": 0.0, ""normal"": 0.0, ""person_down"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0}",4.9,862,"People: 6
+Summary: A man in a striped shirt is on the floor, while another man in a pink shirt holds a knife and stands over him. Other people are standing around, watching.
+Faces: All visible
+Unusual behaviour: One man is holding a knife and standing over another man on the floor.
+Scene: Unclear
+Lighting: Lights on
+Weapon check: yes: person in pink shirt is holding a knife
+Threat check: yes: A man in a striped shirt is lying on the floor, and another man is standing over him holding a knife."
+threat/test_26_t.png,threat,threat,0.96,armed_threat,"{""strange_behaviour"": 0.01, ""armed_threat"": 0.96, ""person_down"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0, ""normal"": 0.03}",4.0,837,"People: 1
+Summary: A person in a black hooded jacket and gloves is at the checkout counter, holding a bag and possibly a weapon or tool. They appear to be committing a robbery.
+Faces: hood and mask
+Unusual behaviour: person is holding a bag and possibly a weapon or tool, suggesting a robbery
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: the person is holding a bat
+Threat check: no"
+threat/test_27_t.png,threat,threat,0.85,ransacked,"{""normal"": 0.17, ""armed_threat"": 0.0, ""ransacked"": 0.78, ""person_down"": 0.0, ""strange_behaviour"": 0.05, ""violence"": 0.0}",3.66,818,"People: 2
+Summary: Two masked individuals are inside the store, one carrying a large bag, appearing to be committing a robbery.
+Faces: both masked with white masks
+Unusual behaviour: carrying large bag, masked, walking through store
+Scene: untidy, items scattered on floor
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+threat/test_28_t.png,threat,safe,0.03,normal,"{""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 1.0, ""person_down"": 0.0, ""armed_threat"": 0.0, ""violence"": 0.0}",4.0,819,"People: 2
+Summary: Two individuals are inside a shop at night, one in a hoodie and backpack, the other in dark clothing, both appearing to browse or take items from shelves.
+Faces: both obscured by hoods or shadows
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+threat/test_29_t.png,threat,threat,0.96,armed_threat,"{""ransacked"": 0.0, ""strange_behaviour"": 0.17, ""normal"": 0.04, ""person_down"": 0.0, ""armed_threat"": 0.79, ""violence"": 0.0}",3.58,810,"People: 1
+Summary: A person in a black hoodie and white gloves is walking through a store aisle while holding a knife in their right hand.
+Faces: hood
+Unusual behaviour: holding a knife
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: person is holding knife
+Threat check: no"
+threat/test_30_t.png,threat,threat,0.97,armed_threat,"{""normal"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0}",5.93,862,"People: 2
+Summary: Two individuals are in the checkout area; one in black is bent over near the counter, and the other in blue is standing with a long object. Both appear to be committing an act of theft or vandalism.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: person in black is holding a crowbar
+Threat check: yes: one person is holding a tool and appears to be threatening or attacking the other person who is bent over and possibly being threatened or attacked."
+threat/test_31_t.png,threat,safe,0.63,ransacked,"{""person_down"": 0.0, ""violence"": 0.0, ""normal"": 0.38, ""strange_behaviour"": 0.04, ""armed_threat"": 0.0, ""ransacked"": 0.58}",4.8,830,"People: 2
+Summary: Two people are inside a store, one in a grey hoodie is pulling items from a drawer, and another in black is reaching into a refrigerator. Items are scattered on the floor.
+Faces: both hidden by hoods
+Unusual behaviour: yes, stealing and causing mess
+Scene: messy, drawers open, items scattered
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+threat/test_32_t.png,threat,threat,0.72,armed_threat,"{""strange_behaviour"": 0.28, ""person_down"": 0.0, ""normal"": 0.26, ""armed_threat"": 0.44, ""violence"": 0.02, ""ransacked"": 0.0}",3.78,821,"People: 2
+Summary: Two masked individuals in black clothing are inside the store, appearing to be committing a robbery. One is near the counter, the other is further back near shelves.
+Faces: both masked
+Unusual behaviour: both are running and appear to be armed or threatening
+Scene: unclear
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+threat/test_33_t.png,threat,threat,0.98,armed_threat,"{""violence"": 0.0, ""armed_threat"": 1.0, ""person_down"": 0.0, ""normal"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0}",3.94,826,"People: 1
+Summary: A person in a grey hoodie is at the counter holding a long object, possibly a weapon, in a store with shelves of merchandise.
+Faces: hood and dark cap
+Unusual behaviour: holding a long object at the counter
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: person is holding a gun
+Threat check: yes: person holding a gun"
+threat/test_34_t.png,threat,threat,0.99,armed_threat,"{""armed_threat"": 1.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0}",5.06,880,"People: 4
+Summary: A person in a black balaclava is pointing a gun at others inside a store. Three people are raising their hands in apparent surrender or fear.
+Faces: one person has a balaclava covering their face, one person has their back turned, one person has short blonde hair and is visible, one person is partially obscured.
+Unusual behaviour: person with gun, others raising hands.
+Scene: unclear
+Lighting: lights on
+Weapon check: yes: the person in the black hoodie is holding a gun
+Threat check: yes: A person is holding a gun and pointing it at others, who are raising their hands in fear."
+threat/test_35_t.png,threat,threat,0.99,armed_threat,"{""normal"": 0.0, ""armed_threat"": 1.0, ""violence"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0}",5.94,922,"People: 2
+Summary: A person in a mask and gloves is holding a gun to another person behind a counter, who appears to be resisting or reacting to the threat.
+Faces: Mask and gloves hide the face of the person with the gun; the other person's face is partially visible.
+Unusual behaviour: One person is holding a gun and threatening another person in a store setting.
+Scene: Unclear — counter and floor appear normal, but the situation is chaotic.
+Lighting: Lights on
+Weapon check: yes: person on left is holding a gun
+Threat check: yes: A person wearing a mask and gloves is holding a gun and pointing it at another person who is standing behind a counter. The person with the gun appears to be threatening or intimidating the other person, who is standing with their hands raised in a defensive posture. This is a clear case of someone"
+threat/test_36_t.png,threat,threat,0.99,armed_threat,"{""armed_threat"": 1.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""normal"": 0.0, ""violence"": 0.0}",4.2,843,"People: 1
+Summary: A person in a dark jacket and cap is holding a handgun while standing in an aisle of a store, with shelves of products behind them. Date stamp shows 12/27/2019.
+Faces: all visible
+Unusual behaviour: person is holding a firearm in a retail environment
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person is holding a gun
+Threat check: yes: person holding a gun"
+threat/test_37_t.png,threat,threat,0.99,armed_threat,"{""armed_threat"": 1.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""normal"": 0.0, ""violence"": 0.0}",4.5,856,"People: 3
+Summary: A person in a white hood is pointing a gun at a cashier while another person in a yellow vest stands nearby. The cashier is holding newspapers.
+Faces: all visible
+Unusual behaviour: person pointing gun at cashier
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person in the foreground holding a gun
+Threat check: yes: A person is holding a gun and pointing it at another person, who appears to be a shopkeeper or employee. This constitutes a threat and potential attack."
+threat/test_38_t.png,threat,threat,0.98,violence,"{""armed_threat"": 0.0, ""violence"": 1.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""normal"": 0.0}",5.09,896,"People: 2
+Summary: A person in a blue shirt is holding and possibly restraining another person in a dark hoodie near the entrance of a store. The scene appears to be a physical altercation.
+Faces: One person's face is obscured by a hood; the other person's face is partially visible but not clearly identifiable.
+Unusual behaviour: A physical altercation is occurring, which is unusual for a store setting.
+Scene: The store appears tidy with shelves stocked, though the immediate area near the altercation is disturbed.
+Lighting: Lights on
+Weapon check: no
+Threat check: yes: A person in a blue shirt is grabbing and holding another person in a black hoodie, appearing to restrain or attack them."
+threat/test_39_t.png,threat,threat,0.78,ransacked,"{""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""person_down"": 0.0, ""ransacked"": 1.0, ""normal"": 0.0, ""violence"": 0.0}",4.11,833,"People: 3
+Summary: Three people are inside a store that appears to have been ransacked; one is walking left, another is crouched near a display, and the third is bent over near the right side. Debris is scattered on the floor.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: broken, smashed, scattered
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+threat/test_40_t.png,threat,threat,0.99,armed_threat,"{""normal"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 1.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""violence"": 0.0}",4.01,838,"People: 2
+Summary: A person in a hoodie is pointing a handgun at an older man wearing a cowboy hat near a checkout counter. The man with the gun appears to be demanding something.
+Faces: all visible
+Unusual behaviour: person pointing gun at cashier
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person in the black hoodie is holding a gun
+Threat check: yes: A person is being threatened with a gun."
+threat/test_41_t.png,threat,threat,0.93,violence,"{""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""violence"": 0.99, ""normal"": 0.01}",4.37,855,"People: 6
+Summary: Several people are in a warehouse-like area with crates and boxes; one person is sitting on a crate, another is standing near a door, and others are near a table with items. It appears to be a security or inventory situation.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: yes: A person is being held down or restrained by others, and at least one person has their hands raised, suggesting fear or surrender."
+threat/test_42_t.png,threat,threat,0.99,armed_threat,"{""normal"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0}",4.3,847,"People: 1
+Summary: A person in a black hoodie and mask is holding a gun while standing in an aisle of a convenience store, pointing it toward the shelves.
+Faces: masked with a green patterned mask
+Unusual behaviour: holding a gun in a store
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the person is holding a gun
+Threat check: yes: A person is holding a gun and pointing it at the store's shelves, which implies a threat."
+threat/test_43_t.png,threat,threat,0.99,armed_threat,"{""strange_behaviour"": 0.0, ""person_down"": 0.0, ""armed_threat"": 1.0, ""normal"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0}",3.69,819,"People: 1
+Summary: A person in a dark hoodie is holding a gun at the checkout counter. 
+Faces: Hood covers face
+Unusual behaviour: Person is holding a gun
+Scene: Tidy
+Lighting: Lights on
+Weapon check: yes: person in black hoodie is holding a gun
+Threat check: yes: A person is holding a gun."
+threat/test_44_t.jpg,threat,threat,0.97,violence,"{""violence"": 0.97, ""person_down"": 0.01, ""ransacked"": 0.02, ""normal"": 0.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0}",3.0,846,"People: 2
+Summary: A person is on the floor near overturned chairs, while another person runs past a freezer. The scene appears chaotic.
+Faces: all visible
+Unusual behaviour: person on floor, chairs overturned, person running
+Scene: messy, chairs overturned, glass on table
+Lighting: lights on
+Weapon check: no
+Threat check: yes: A person is being attacked or held down, as one individual is on the ground while another is standing over them in a threatening manner."
+threat/test_45_t.png,threat,threat,0.97,violence,"{""violence"": 1.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 0.0, ""armed_threat"": 0.0, ""person_down"": 0.0}",5.58,902,"People: 2
+Summary: A man in a grey shirt is at the checkout counter, and another person in a black hooded jacket is interacting with him, possibly in a confrontational or transactional situation.
+Faces: One person has a visible face; the other is obscured by a black hood.
+Unusual behaviour: The person in the hood is leaning over the counter and appears to be handling something or interacting aggressively with the man.
+Scene: The shop is generally tidy, though there are some items on the floor near the aisle.
+Lighting: lights on
+Weapon check: no
+Threat check: yes: A person in a black hoodie is grabbing the arm of a man in a gray shirt, who appears to be resisting or reacting to the grab."
+threat/test_46_t.png,threat,threat,0.8,armed_threat,"{""armed_threat"": 0.71, ""violence"": 0.01, ""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.13, ""normal"": 0.15}",4.47,845,"People: 3
+Summary: Two masked individuals are at the counter with a cashier, appearing to be in a confrontation or robbery. One person is holding a large object, possibly a weapon or tool.
+Faces: All hidden by masks
+Unusual behaviour: One person is holding a large object, possibly a weapon or tool, and the masked individuals are confronting the cashier.
+Scene: Tidy, no visible damage or scattered items
+Lighting: Lights on
+Weapon check: no
+Threat check: no"
+threat/test_47_t.png,threat,threat,0.99,armed_threat,"{""ransacked"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""armed_threat"": 1.0, ""normal"": 0.0}",4.53,853,"People: 3
+Summary: Two masked individuals appear to be confronting a store employee at the checkout counter; one is holding a firearm. The employee is seated and facing them.
+Faces: All visible
+Unusual behaviour: One person is holding a firearm; individuals are wearing hoods and masks.
+Scene: Unclear
+Lighting: Lights on
+Weapon check: yes: person on left is holding a gun
+Threat check: yes: one person is holding a gun and pointing it at the other person, who appears to be in fear"
+threat/test_48_t.png,threat,threat,0.99,armed_threat,"{""ransacked"": 0.0, ""armed_threat"": 1.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""normal"": 0.0, ""violence"": 0.0}",4.19,840,"People: 2
+Summary: A person in a colorful outfit is holding a gun to a cashier who is raising their hands in surrender behind a glass counter.
+Faces: all visible
+Unusual behaviour: person holding gun, cashier raising hands
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: person on left is holding a gun
+Threat check: yes: A person is holding a gun and pointing it at another person who is raising their hands in fear."
+threat/test_49_t.png,threat,safe,0.02,normal,"{""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0}",3.51,808,"People: 3
+Summary: A man in a straw hat is at the checkout counter interacting with two employees. The man appears to be paying or handing something over.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+threat/test_50_t.png,threat,threat,0.99,armed_threat,"{""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 1.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""normal"": 0.0}",3.74,826,"People: 1
+Summary: A woman is standing near the checkout counter, pointing a handgun toward the camera. She appears to be demanding something.
+Faces: all visible
+Unusual behaviour: pointing a gun at the camera
+Scene: tidy
+Lighting: lights on
+Weapon check: yes: the woman is holding a gun
+Threat check: yes: A woman is pointing a gun at the camera."
+safe/test_01_s.png,safe,safe,0.02,normal,"{""strange_behaviour"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""normal"": 1.0, ""violence"": 0.0, ""armed_threat"": 0.0}",3.5,810,"People: 3
+Summary: Three men are standing at a jewelry counter, looking at items on tablets. One man is smiling while the other two are focused on the devices.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_02_s.png,safe,safe,0.04,normal,"{""armed_threat"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.02, ""violence"": 0.0, ""normal"": 0.98, ""ransacked"": 0.0}",4.36,852,"People: 4
+Summary: Four people are walking down a store aisle, appearing to be in a hurry or possibly acting suspiciously. The person on the far left is wearing a dark hoodie, the one in front is in a brown jacket and cap, the woman in the middle is in a light-colored coat, and the person on the right is in a dark jacket.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_03_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""violence"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0}",3.88,826,"People: 3
+Summary: Two men are at the checkout counter; one is wearing a fur hat and appears to be the cashier, while the other is standing and looking at items on the counter. A third person is visible in the background near shelves.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_04_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0}",3.68,813,"People: 1
+Summary: A person in an orange high-visibility jacket and beanie is walking down an aisle holding a drink bottle. They appear to be browsing or shopping normally.
+Faces: masked
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_05_s.png,safe,safe,0.02,normal,"{""violence"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0}",3.68,811,"People: 5
+Summary: Several customers are in the store, including a man in a hat holding a drink and a woman in a red top walking. Others are near counters.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_06_s.png,safe,safe,0.02,normal,"{""normal"": 1.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0}",3.48,805,"People: 1
+Summary: A man in a safety vest is walking through an aisle in a convenience store. He appears to be a staff member.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_07_s.png,safe,safe,0.02,normal,"{""normal"": 1.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""person_down"": 0.0, ""violence"": 0.0, ""ransacked"": 0.0}",3.27,793,"People: 0
+Summary: Security camera view of an empty alcohol section in a store, with shelves stocked and a few boxes on the floor.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on"
+safe/test_08_s.png,safe,safe,0.03,normal,"{""violence"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""normal"": 0.99, ""armed_threat"": 0.0, ""strange_behaviour"": 0.01}",3.68,813,"People: 4
+Summary: A jewelry store with staff assisting customers at display cases; one employee is at a desk with a computer showing a ""Gates have been closed"" alert. 
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_09_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""violence"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""ransacked"": 0.0}",3.58,817,"People: 1
+Summary: A man in a dark jacket is sitting at a counter in a jewelry store, looking toward the camera. The store appears to be empty otherwise, with display cases and seating visible.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_10_s.png,safe,threat,0.72,strange_behaviour,"{""violence"": 0.0, ""strange_behaviour"": 0.98, ""normal"": 0.02, ""ransacked"": 0.0, ""person_down"": 0.0, ""armed_threat"": 0.0}",3.3,805,"People: 2
+Summary: A cashier in a purple shirt is handling a product at the register while another person stands on a counter in the background.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_11_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 1.0, ""person_down"": 0.0, ""violence"": 0.0}",3.65,815,"People: 1
+Summary: A man is sitting at the counter talking on the phone. The shop is well-stocked with electronics and equipment, and a large black case sits on the floor.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_12_s.png,safe,safe,0.02,normal,"{""armed_threat"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""normal"": 1.0, ""ransacked"": 0.0}",3.4,805,"People: 4
+Summary: Customers are browsing security cameras and electronics in a well-lit store. One man is looking at a product while others observe.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_13_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""violence"": 0.0, ""person_down"": 0.0, ""normal"": 1.0}",3.45,806,"People: 5
+Summary: A cashier is scanning items for two customers at the checkout counter. Two other customers are browsing the aisles in the background.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_14_s.png,safe,safe,0.03,normal,"{""strange_behaviour"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0, ""person_down"": 0.0}",6.14,927,"People: 8
+Summary: Several customers, including men and women in black veils, are browsing jewelry in glass display cases. A man in a yellow safety jacket and sunglasses stands near the entrance holding a water bottle. One man in a hoodie and face mask is also looking at items. No signs of distress or unusual activity.
+Faces: One person has a face mask, one person has a black veil covering the face, one person has a black veil covering the head and face, one person has a black veil covering the head and face, one person has a black veil covering the head and face, one person has a black veil covering the head and face, one person has a black veil covering the head and face, one person has a black veil covering the head and face.
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_15_s.png,safe,safe,0.06,strange_behaviour,"{""violence"": 0.0, ""armed_threat"": 0.0, ""normal"": 0.14, ""ransacked"": 0.0, ""strange_behaviour"": 0.86, ""person_down"": 0.0}",3.68,817,"People: 1
+Summary: A person is crouched on the floor in an aisle, appearing to search through a shopping basket. The store shelves are stocked with products.
+Faces: all visible
+Unusual behaviour: person crouching and rummaging through basket on floor
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_16_s.png,safe,safe,0.02,normal,"{""strange_behaviour"": 0.0, ""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0, ""ransacked"": 0.0}",3.57,807,"People: 1
+Summary: A woman is browsing products on a shelf near the checkout area. She is holding a bag and appears to be selecting an item.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_17_s.png,safe,safe,0.03,normal,"{""armed_threat"": 0.0, ""person_down"": 0.0, ""violence"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0}",4.29,844,"People: 2
+Summary: Two people are at the checkout counter; one is wearing a black cap and hoodie, the other is in a white shirt. The person in black appears to be interacting with the cashier or equipment.
+Faces: The person in the black cap has their face obscured by the cap and angle.
+Unusual behaviour: none seen
+Scene: The shop appears tidy with no visible broken or scattered items.
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_18_s.png,safe,safe,0.02,normal,"{""armed_threat"": 0.0, ""violence"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 1.0}",3.4,811,"People: 1
+Summary: A store employee is walking through the aisle carrying a cardboard box. The store appears normal with shelves stocked and a self-checkout kiosk visible.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_19_s.png,safe,safe,0.03,normal,"{""normal"": 1.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0}",4.06,833,"People: 6
+Summary: Several customers are browsing jewelry in a well-lit store. One man in a high-visibility jacket enters through the door holding a water bottle.
+Faces: 3 covered by black niqabs, 1 obscured by sunglasses, 1 visible, 1 partially visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_20_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 1.0, ""person_down"": 0.0, ""armed_threat"": 0.0, ""violence"": 0.0}",3.58,813,"People: 5
+Summary: Customers are at the checkout counter; one person is paying, another is waiting, and a cashier is assisting. Shelves with products and digital displays are visible.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_21_s.png,safe,safe,0.02,normal,"{""strange_behaviour"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0, ""person_down"": 0.0}",3.44,802,"People: 2
+Summary: A cashier is operating a register while a customer stands at the counter; transaction details are visible on screen.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_22_s.png,safe,safe,0.07,normal,"{""violence"": 0.0, ""armed_threat"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""normal"": 0.96, ""strange_behaviour"": 0.04}",3.71,811,"People: 1
+Summary: A worker is installing or adjusting a security camera on the ceiling of a gas station convenience store. He is on a ladder and wearing a hard hat.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_23_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0, ""ransacked"": 0.0}",3.37,804,"People: 4
+Summary: A cashier is bagging items for two customers at the checkout counter. Another person is walking away in the aisle.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_24_s.png,safe,safe,0.02,normal,"{""violence"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0}",3.68,816,"People: 2
+Summary: Two men are pushing shopping carts down an aisle in a store. The man in front is wearing a blue jacket and cap, the other is bald and wearing a dark vest.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_25_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0, ""violence"": 0.0}",3.47,808,"People: 1
+Summary: A man in a black jacket is pushing a shopping trolley down an aisle stocked with alcohol. He is looking toward the camera.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_26_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""normal"": 1.0}",5.01,816,"People: 7
+Summary: A man in a high-visibility jacket enters the jewelry store through the front door while holding a water bottle. Several customers are seated at the counter in the background.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_27_s.png,safe,safe,0.04,normal,"{""armed_threat"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""normal"": 1.0, ""ransacked"": 0.0}",3.58,807,"People: 1
+Summary: A person is pushing a shopping cart down an aisle stocked with alcohol. They are wearing a grey hoodie and a black face covering.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_28_s.png,safe,safe,0.02,normal,"{""normal"": 1.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0}",3.58,808,"People: 1
+Summary: A man in a blue shirt and dark jacket is holding a large water bottle while standing in an aisle, looking down at the product.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_29_s.png,safe,safe,0.02,normal,"{""normal"": 1.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0}",3.49,808,"People: 7
+Summary: Several women in black abayas and niqabs are shopping in a supermarket aisle, pushing carts. Shelves are stocked with snacks.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_30_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""person_down"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0}",3.56,807,"People: 4
+Summary: Four women in black abayas are shopping in an aisle, one pushing a cart. Shelves are full of snacks and candy.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_31_s.png,safe,safe,0.03,normal,"{""person_down"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0}",3.88,821,"People: 3
+Summary: A woman in a black niqab is examining jewelry in a glass case. An older man stands behind her, looking on. Another person is partially visible in the background.
+Faces: woman: niqab, man: visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_32_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0, ""person_down"": 0.0, ""violence"": 0.0}",3.17,794,"People: 0
+Summary: Security camera view inside a store at night, showing glass display cases, signs, and reflections. No people are visible.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on"
+safe/test_33_s.png,safe,safe,0.07,normal,"{""armed_threat"": 0.0, ""person_down"": 0.0, ""normal"": 0.97, ""violence"": 0.0, ""strange_behaviour"": 0.03, ""ransacked"": 0.0}",3.64,820,"People: 1
+Summary: A person in a light-colored hooded outfit is standing near a wall, possibly interacting with a door or panel. The scene is dark and appears to be an alley or exterior area at night.
+Faces: hood
+Unusual behaviour: none seen
+Scene: unclear
+Lighting: lights off
+Weapon check: no
+Threat check: no"
+safe/test_34_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0}",3.81,821,"People: 8
+Summary: Several customers are browsing or using devices at service counters. A security guard is standing near a counter. An Apple employee in a blue shirt is focused on a task. The store appears busy but calm.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_35_s.png,safe,safe,0.02,normal,"{""armed_threat"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""normal"": 1.0}",3.78,821,"People: 1
+Summary: A single employee wearing a face mask stands near a display counter in an Apple store. The large wall behind him shows a close-up of iPhone camera modules. The store appears empty and quiet.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_36_s.png,safe,safe,0.02,normal,"{""violence"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 0.0, ""person_down"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0}",3.37,802,"People: 10
+Summary: Customers are browsing products on display tables in an Apple Store. One person is walking through the space.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_37_s.png,safe,safe,0.03,normal,"{""violence"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0}",3.68,819,"People: 2
+Summary: A man in a black hoodie with ""93"" on it is walking down an aisle between shelves stocked with bottles. Another person is partially visible in the foreground, pushing a shopping cart.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_38_s.png,safe,safe,0.08,normal,"{""person_down"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0, ""strange_behaviour"": 0.0}",4.5,852,"People: 7
+Summary: Two masked individuals are entering the store while several other customers are shopping and paying at the register.
+Faces: Two people have black masks covering their faces; one has a black beanie and glasses; one woman has her face partially covered by her hair; one man has his face partially obscured by his sweater; one child has his face visible.
+Unusual behaviour: None seen.
+Scene: Tidy, no broken or scattered items.
+Lighting: Lights on
+Weapon check: no
+Threat check: no"
+safe/test_39_s.png,safe,safe,0.03,normal,"{""violence"": 0.0, ""ransacked"": 0.0, ""normal"": 1.0, ""person_down"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0}",3.58,817,"People: 1
+Summary: A man in a black hooded jacket is standing in an aisle, looking toward the camera. His right hand is in his pocket, and his left hand is near a shelf.
+Faces: hood
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_40_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""violence"": 0.0, ""person_down"": 0.0, ""normal"": 1.0}",3.27,805,"People: 1
+Summary: A man in a blue jacket is walking through the store's entrance. A car is visible outside through the glass door.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_41_s.png,safe,safe,0.03,normal,"{""violence"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0}",3.58,813,"People: 1
+Summary: A person in a black hooded jacket is standing in front of a refrigerated display case in a store aisle, appearing to look inside or handle something.
+Faces: hood
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_42_s.png,safe,safe,0.03,normal,"{""violence"": 0.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""ransacked"": 0.0, ""normal"": 1.0, ""armed_threat"": 0.0}",3.27,802,"People: 1
+Summary: A person in dark clothing is walking down an aisle in a store, holding something in their hands. 
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_43_s.png,safe,safe,0.03,normal,"{""normal"": 1.0, ""person_down"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0}",3.37,802,"People: 1
+Summary: One person in a maroon hoodie and sunglasses is standing in the store aisle, facing the camera. 
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_44_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""ransacked"": 0.0, ""violence"": 0.0}",3.64,810,"People: 15
+Summary: A busy restaurant with many patrons seated at tables, some eating, others talking or moving about. One person is walking through the dining area.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_45_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""ransacked"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0, ""normal"": 1.0}",3.41,802,"People: 8
+Summary: Chefs are working in a busy professional kitchen, preparing food at stainless steel stations under bright overhead lights.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_46_s.png,safe,safe,0.04,normal,"{""ransacked"": 0.05, ""person_down"": 0.0, ""violence"": 0.0, ""normal"": 0.94, ""strange_behaviour"": 0.01, ""armed_threat"": 0.0}",3.73,824,"People: 1
+Summary: A person is standing at the counter behind a coffee machine, appearing to prepare a drink. The shop is otherwise empty and the counter has various items on it.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: not tidy, items are scattered on the counter and sink area
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_47_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""violence"": 0.0, ""normal"": 1.0, ""strange_behaviour"": 0.0, ""armed_threat"": 0.0, ""ransacked"": 0.0}",4.04,834,"People: 3
+Summary: Three people are in a cafe-like setting. One person is walking through the space holding papers and talking on a phone. Another is seated at a table with a laptop. A third is sitting on a bench, looking at a phone. No unusual behavior is observed.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_48_s.png,safe,safe,0.02,normal,"{""normal"": 1.0, ""armed_threat"": 0.0, ""ransacked"": 0.0, ""person_down"": 0.0, ""strange_behaviour"": 0.0, ""violence"": 0.0}",3.68,813,"People: 10
+Summary: A restaurant or cafe with patrons seated at tables and a few people standing near the entrance. One person is at a counter, possibly checking in or ordering.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_49_s.png,safe,safe,0.02,normal,"{""ransacked"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""person_down"": 0.0, ""normal"": 1.0, ""violence"": 0.0}",3.52,811,"People: 1
+Summary: A man in a suit stands inside a luxury jewelry store, looking out toward the street. The store is well-lit and displays jewelry in glass cases.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: tidy
+Lighting: lights on
+Weapon check: no
+Threat check: no"
+safe/test_50_s.png,safe,safe,0.02,normal,"{""person_down"": 0.0, ""violence"": 0.0, ""armed_threat"": 0.0, ""strange_behaviour"": 0.0, ""ransacked"": 0.0, ""normal"": 1.0}",3.85,825,"People: 1
+Summary: A delivery person wearing a winter coat, beanie, and gloves is standing in a hallway holding a tablet. They have a green Uber Eats backpack on. A door and signs are visible on the wall behind them.
+Faces: all visible
+Unusual behaviour: none seen
+Scene: unclear
+Lighting: lights on
+Weapon check: no
+Threat check: no"

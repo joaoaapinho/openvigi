@@ -1,0 +1,13 @@
+__pycache__/
+*.egg-info/
+build/
+dist/
+.venv/
+.env
+
+# alert snapshots and test frames show real people
+alerts/
+snapshot.jpg
+
+# per-frame benchmark results, rebuilt by benchmarks/eval_videos.py
+benchmarks/cache/
